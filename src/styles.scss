@@ -1,0 +1,211 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --brand-blue: #0066ff;
+    --surface: #faf8ff;
+    --on-surface: #131b2e;
+    --on-surface-variant: #424656;
+    --surface-container-low: #f2f3ff;
+    --primary-container: #0066ff;
+    --on-primary: #ffffff;
+    --success-emerald: #10b981;
+    --primary-fixed: #dae1ff;
+    --on-primary-fixed-variant: #003fa4;
+}
+
+body {
+    font-family: "Hanken Grotesk", sans-serif;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand,
+.font-sora {
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+}
+
+.btn-brand-primary {
+    background-color: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem; /* ROUND_EIGHT approximation */
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-brand-primary:hover {
+    background-color: #0052cc;
+    border-color: #0052cc;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.btn-brand-outline {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    color: var(--brand-blue);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.btn-brand-outline:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: var(--brand-blue);
+    color: var(--brand-blue);
+}
+
+.navbar {
+    background: rgba(250, 248, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(194, 198, 216, 0.3);
+}
+
+.nav-link {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--on-surface-variant) !important;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: var(--brand-blue) !important;
+    border-bottom: 2px solid var(--brand-blue);
+}
+
+.hero-section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-fixed);
+    color: var(--on-primary-fixed-variant);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-family: "JetBrains Mono", monospace;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+    color: var(--brand-blue);
+    font-style: italic;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.bg-icon-1 {
+    background-color: #dae1ff;
+}
+.bg-icon-2 {
+    background-color: #ffd9dc;
+}
+.bg-icon-3 {
+    background-color: #b7eaff;
+}
+
+.closing-cta {
+    background-color: var(--on-surface);
+    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(194, 198, 216, 0.2);
+    padding: 40px 0;
+}
+
+.footer-link {
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--brand-blue);
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f3ff;
+    color: var(--on-surface);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--brand-blue);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        padding: 60px 0;
+    }
+}
+
+html {
+  scroll-behavior: smooth;
+}

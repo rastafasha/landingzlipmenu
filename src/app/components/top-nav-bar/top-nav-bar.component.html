@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md sticky-top py-3">
+    <div class="container max-w-max-width">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img alt="Zlipmenu Logo" height="32" src="assets/svg/logo-zlipmenu_logo.svg" />
+            <img alt="Zlipmenu Logo" height="32" src="assets/svg/logo-zlipmenu_tipo.svg" />
+        </a>
+        <button class="navbar-toggler border-0" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="/"  routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        [ngClass]="{ 'active': fragmentoActivo === 'inicio' }">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-md-4" routerLink="/" 
+           fragment="beneficio"
+           [ngClass]="{ 'active': fragmentoActivo === 'beneficio' }">Beneficios</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/" fragment="precios">Precios</a>
+                </li> -->
+            </ul>
+            <div class="d-flex">
+                <button class="btn btn-brand-primary rounded-pill px-4" style="font-size: 0.85rem;">Probar
+                    Gratis</button>
+            </div>
+        </div>
+    </div>
+</nav>
