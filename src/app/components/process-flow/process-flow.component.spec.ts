@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeaturedSectionComponent } from './featured-section.component';
+import { ProcessFlowComponent } from './process-flow.component';
 
-describe('FeaturedSectionComponent', () => {
-  let component: FeaturedSectionComponent;
-  let fixture: ComponentFixture<FeaturedSectionComponent>;
+describe('ProcessFlowComponent', () => {
+  let component: ProcessFlowComponent;
+  let fixture: ComponentFixture<ProcessFlowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeaturedSectionComponent]
+      imports: [ProcessFlowComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FeaturedSectionComponent);
+    fixture = TestBed.createComponent(ProcessFlowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

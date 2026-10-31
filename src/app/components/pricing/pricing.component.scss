@@ -1,0 +1,92 @@
+// ==========================================
+// 🎨 PRICING BENTO HORIZONTAL (APPLE STYLE)
+// ==========================================
+
+.pricing-section {
+  background-color: #FAFAFA;
+  font-family: 'Inter', sans-serif;
+}
+
+.bento-card-horizontal {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 2rem; // Bordes más curvos y orgánicos estilo hardware Apple
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background: #FFFFFF;
+  will-change: transform, box-shadow;
+  
+  &:hover {
+    transform: scale(1.005);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04) !important;
+  }
+}
+
+.badge-premium {
+  font-size: 0.7rem;
+  color: #6E6E73;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.4rem 0.8rem;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.badge-trial {
+  font-size: 0.75rem;
+  color: #1D1D1F;
+  font-weight: 600;
+  background: #F5F5F7;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+.text-secondary {
+  color: #6E6E73 !important;
+}
+
+.bg-tail {
+  background-color: #FCFCFD; // Sutil contraste premium en la zona de beneficios
+}
+
+.investment-note {
+  background-color: #F5F5F7;
+  border: 1px solid rgba(0, 0, 0, 0.01);
+}
+
+.btn-dark {
+  background-color: #1D1D1F;
+  border: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #000000;
+    transform: scale(1.02);
+  }
+}
+
+.text-success {
+  color: #008069 !important;
+  font-weight: bold;
+}
+
+// --- Responsive Utilities Basadas en Bootstrap ---
+@media (min-width: 992px) {
+  .border-end-desktop {
+    border-right: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+  .border-top-desktop {
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+  .text-start-desktop {
+    text-align: left !important;
+  }
+  .text-end-desktop {
+    text-align: right !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .w-100-mobile {
+    width: 100% !important;
+  }
+}

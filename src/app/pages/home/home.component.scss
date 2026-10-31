@@ -1,0 +1,9 @@
+.navbar {
+  letter-spacing: -0.01em;
+}
+
+// Suavizado de transiciones para elementos interactivos en el menú
+.nav-link {
+  transition: color 0.15s ease-in-out;
+}
+

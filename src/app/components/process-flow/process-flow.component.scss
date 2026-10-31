@@ -1,0 +1,16 @@
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+@keyframes fadeInPerspective {
+  from { opacity: 0.4; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeInPerspective 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

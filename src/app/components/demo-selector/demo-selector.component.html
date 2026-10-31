@@ -1,0 +1,111 @@
+<section id="probar-demo" class="py-5 bg-white border-bottom border-apple">
+  <div class="container px-4 text-center" style="max-width: 960px;">
+    
+    <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Prueba la Experiencia</span>
+    <h2 class="display-5 fw-bold tracking-tight mb-4">Explora el catálogo desde la perspectiva del cliente</h2>
+    
+    <!-- Selector de pestañas reactivo estilo Apple -->
+    <div class="d-inline-flex bg-apple-light p-1 rounded-pill mb-5 border border-apple">
+      <button 
+        class="btn btn-sm rounded-pill px-4 fw-medium border-0 transition-all"
+        [ngClass]="activeDemo() === 'panaderia' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+        (click)="setDemo('panaderia')">
+        🥐 Panadería & Pastelería
+      </button>
+      <button 
+        class="btn btn-sm rounded-pill px-4 fw-medium border-0 transition-all"
+        [ngClass]="activeDemo() === 'restaurante' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+        (click)="setDemo('restaurante')">
+        🍕 Pizzería & Restaurante
+      </button>
+    </div>
+
+    <div class="row g-5 align-items-center text-start justify-content-center">
+      
+      <!-- Mockup Interactivo del Celular (La Carta) -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="bg-white border border-apple p-2 rounded-5 shadow-sm position-relative animate-fade" style="width: 290px; aspect-ratio: 9/19;">
+          <div class="bg-white rounded-5 h-100 w-100 overflow-hidden d-flex flex-column border border-apple">
+            
+            <!-- Header simulado de la App (SlideDish) -->
+            <div class="bg-apple-light border-bottom border-apple px-3 py-2.5 text-center">
+              <span class="fw-bold tracking-wider text-dark small" style="font-size: 11px;">SLIDEDISH</span>
+              <div class="text-apple-light font-monospace p-0 m-0" style="font-size: 8px;">CARTA DIGITAL</div>
+            </div>
+            
+            <!-- Cuerpo dinámico de productos -->
+            <div class="p-3 flex-grow-1 overflow-y-auto style-scrollbar">
+              
+              @let currentProducts = activeDemo() === 'panaderia' ? panaderiaProducts : restauranteProducts;
+              
+              @for (item of currentProducts; track item.name) {
+                <div class="mb-3 border-bottom border-apple pb-2">
+                  <span class="text-danger fw-bold text-uppercase font-monospace" style="font-size: 9px;">{{ item.category }}</span>
+                  <div class="d-flex align-items-center justify-content-between mt-1">
+                    <div>
+                      <h4 class="fw-bold text-dark mb-1" style="font-size: 0.85rem;">{{ item.name }}</h4>
+                      <div class="d-flex align-items-center gap-2">
+                        @if (item.oldPrice) {
+                          <span class="text-decoration-line-through text-apple-light small" style="font-size: 11px;">{{ item.oldPrice }}</span>
+                        }
+                        <span class="text-primary fw-bold small" style="font-size: 13px;">{{ item.price }}</span>
+                      </div>
+                    </div>
+                    <!-- Icono o miniatura provisional del producto -->
+                    <div class="bg-apple-light border border-apple rounded-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.5rem;">
+                      {{ item.icon }}
+                    </div>
+                  </div>
+                </div>
+              }
+              
+            </div>
+            
+            <!-- Footer fijo del Carrito de Compras -->
+            <div class="p-3 border-top border-apple bg-white">
+              <div class="btn btn-primary w-100 rounded-pill py-2 small fw-medium d-flex justify-content-between align-items-center" style="font-size: 12px; background-color: #0071E3;">
+                <span>🛒 Ver pedido</span>
+                <span class="badge bg-white text-primary rounded-pill font-monospace">2</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección Informativa Lateral con Códigos QR -->
+      <div class="col-md-6 text-center text-md-start">
+        <h3 class="h3 fw-bold text-dark mb-3">Escanea y experimenta el flujo en tu smartphone</h3>
+        <p class="text-apple-muted mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+          Zlipmenu automatiza los pedidos convirtiendo el carrito de compras en un mensaje estructurado directo al WhatsApp del negocio. Escanea el código correspondiente para abrir la demo directamente en tu móvil de forma nativa.
+        </p>
+        
+        <!-- Tarjeta del QR Dinámico -->
+        <div class="bg-apple-light border border-apple rounded-4 p-4 d-inline-block shadow-sm text-center">
+          <div class="bg-white border border-apple rounded p-3 d-inline-block mb-2 shadow-inner">
+            
+            @if (activeDemo() === 'panaderia') {
+              <!-- Reemplaza con la ruta de tu imagen de QR de Panadería (pág 8) -->
+              <div class="bg-light border border-dashed rounded d-flex flex-column align-items-center justify-content-center animate-fade" style="width: 140px; height: 140px; font-size: 11px; color: #86868b;">
+                <span>[QR PANADERÍA]</span>
+                <span class="font-monospace mt-1" style="font-size: 9px;">SlideDish Panes</span>
+              </div>
+            } @else {
+              <!-- Reemplaza con la ruta de tu imagen de QR de Pizzería (pág 8) -->
+              <div class="bg-light border border-dashed rounded d-flex flex-column align-items-center justify-content-center animate-fade" style="width: 140px; height: 140px; font-size: 11px; color: #86868b;">
+                <span>[QR RESTAURANTE]</span>
+                <span class="font-monospace mt-1" style="font-size: 9px;">SlideDish Pizza</span>
+              </div>
+            }
+            
+          </div>
+          <div class="text-apple-muted small fw-medium mt-1" style="font-size: 11px;">
+            Demostración funcional interactiva
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>

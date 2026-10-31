@@ -1,0 +1,36 @@
+.footer-link-apple {
+  color: #6E6E73;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 0;
+
+  &:hover {
+    color: #1D1D1F;
+    text-decoration: underline;
+  }
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+// Estilos específicos para refinar la estética del modal de Bootstrap
+.modal-content {
+  -webkit-font-smoothing: antialiased;
+}
+
+.modal-body {
+  // Ajuste sutil para la barra de desplazamiento interna del modal
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #E8E8ED;
+    border-radius: 10px;
+  }
+}

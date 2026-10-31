@@ -1,31 +1,98 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row align-items-center gy-4">
-            <div class="col-md-4 text-center text-md-start">
-                <img alt="Zlipmenu Logo" height="32"
-                src="assets/svg/logo-zlipmenu_logo.svg" />
-            <img alt="Zlipmenu Logo" height="32"
-                src="assets/svg/logo-zlipmenu_tipo.svg" />
-                <p class="text-muted mb-0" style="font-size: 0.75rem;">© 2026 Zlipmenu. Todos los derechos reservados.
-                </p>
-            </div>
-            <!-- <div class="col-md-4 text-center">
-                <div class="d-flex justify-content-center">
-                    <a class="footer-link" href="#">Privacidad</a>
-                    <a class="footer-link" href="#">Términos</a>
-                    <a class="footer-link" href="#">Soporte</a>
-                </div>
-            </div> -->
-            <!-- <div class="col-md-4">
-                <div class="d-flex justify-content-center justify-content-md-end gap-3">
-                    <button class="social-btn">
-                        <span class="material-symbols-outlined fs-5">share</span>
-                    </button>
-                    <button class="social-btn">
-                        <span class="material-symbols-outlined fs-5">language</span>
-                    </button>
-                </div>
-            </div> -->
-        </div>
+<footer class="bg-white border-top border-apple py-5">
+  <div class="container px-4" style="max-width: 1140px;">
+    <div class="row g-4 justify-content-between">
+      
+      <!-- Columna Marca -->
+      <div class="col-md-4">
+        <a class="navbar-brand fw-bold text-dark d-block mb-3" href="#" style="font-size: 1.125rem;">
+          <img alt="Zlipmenu Logo" height="32" src="assets/svg/logo-zlipmenu_logo.svg" />
+            <img alt="Zlipmenu Logo" height="32" src="assets/svg/logo-zlipmenu_tipo.svg" />
+        </a>
+        <p class="text-apple-muted small" style="max-width: 280px; line-height: 1.5;">
+          Catálogos digitales inteligentes para modernizar la gestión y las ventas de cualquier rubro comercial.
+        </p>
+      </div>
+
+      <!-- Columna Enlaces Rápidos -->
+      <div class="col-6 col-md-3">
+        <h6 class="text-dark fw-bold small text-uppercase tracking-wider mb-3" style="font-size: 11px;">Plataforma</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small m-0 p-0">
+          <li><a href="#soluciones" class="footer-link-apple">Soluciones</a></li>
+          <li><a href="#caracteristicas" class="footer-link-apple">Características</a></li>
+          <li><a href="#precios" class="footer-link-apple">Precios</a></li>
+          <li><a href="https://vercel.app" target="_blank" class="footer-link-apple">Panel de Control</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna Soporte / Legal -->
+      <div class="col-6 col-md-3">
+        <h6 class="text-dark fw-bold small text-uppercase tracking-wider mb-3" style="font-size: 11px;">Legal & Soporte</h6>
+        <ul class="list-unstyled d-flex flex-column gap-2 small m-0 p-0">
+          <li>
+            <button type="button" class="btn p-0 text-start footer-link-apple border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#legalModal">
+              Términos y Privacidad
+            </button>
+          </li>
+          <li>
+          <a [href]="'https://wa.me/' + phone + '?text=' + message" 
+                    target="_blank" 
+                    class="footer-link-apple">
+                     Contacto WhatsApp
+                    </a>
+          </li>
+        </ul>
+      </div>
+
     </div>
+
+    <!-- Barra Inferior de Copyright -->
+    <div class="row mt-5 pt-4 border-top border-apple align-items-center">
+      <div class="col-sm-6 text-center text-sm-start mb-3 mb-sm-0">
+        <span class="text-apple-light small">&copy; {{ currentYear }} Zlipmenu. Todos los derechos reservados. <br> Desarrollado por: <a href="https://malcolmcordova.com" target="_blank">Malcolm Cordova Studio Design</a></span>
+      </div>
+      <div class="col-sm-6 text-center text-sm-end">
+        <span class="text-apple-light small">Inspirado en la simplicidad.</span>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- Modal de Términos y Privacidad (Estilo Klyntic / Apple) -->
+<div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 600px;">
+    <div class="modal-content border-0 rounded-4 shadow" style="background-color: #FAFAFA;">
+      
+      <div class="modal-header border-bottom border-apple bg-white px-4 py-3 rounded-top-4">
+        <h5 class="modal-title fw-bold text-dark h5" id="legalModalLabel">Políticas y Condiciones</h5>
+        <button type="button" class="btn-close shadow-none" data-bs-shadow="none" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body px-4 py-4 text-apple-muted" style="font-size: 0.9rem; line-height: 1.6;">
+        <h6 class="fw-bold text-dark mb-2">1. Protección de Datos y Gestión del Registro</h6>
+        <p class="mb-4">
+          Los datos recolectados para la creación de cuentas en Zlipmenu (nombre, correo electrónico y datos de contacto de tu negocio) se almacenan de forma segura con el único fin de proveer acceso técnico e identificar tu catálogo digital en la red.
+        </p>
+
+        <h6 class="fw-bold text-dark mb-2">2. Confidencialidad y Propiedad de los Productos</h6>
+        <p class="mb-4">
+          La información de tus artículos, precios, imágenes e inventarios cargados en el panel administrativo pertenecen de manera exclusiva a tu negocio. Zlipmenu no comparte, comercializa ni expone bases de datos de productos ni métricas internas con terceras partes bajo ningún concepto.
+        </p>
+
+        <h6 class="fw-bold text-dark mb-2">3. Periodo de Prueba y Licenciamiento</h6>
+        <p class="mb-4">
+          Al registrar una nueva cuenta, obtienes acceso automático y gratuito a todas las funcionalidades avanzadas durante un periodo de prueba de siete (7) días consecutivos. Al finalizar este lapso, podrás elegir un plan de suscripción para mantener activo el flujo de pedidos masivos, o continuar bajo las limitaciones del Plan Base si aplica.
+        </p>
+
+        <h6 class="fw-bold text-dark mb-2">4. Deslindamiento de Transacciones</h6>
+        <p class="p-0 m-0">
+          Zlipmenu funciona como un catálogo digital inteligente que automatiza la mensajería hacia tu WhatsApp para estructurar el pedido. La plataforma no interviene en la pasarela de pago ni cobra comisiones por venta; todo acuerdo monetario o logística de entrega se resuelve directamente entre el comerciante y su cliente final.
+        </p>
+      </div>
+      
+      <div class="modal-footer border-top border-apple bg-white px-4 py-3 rounded-bottom-4">
+        <button type="button" class="btn btn-dark rounded-pill px-4 fw-medium small" style="background-color: #1D1D1F; font-size: 0.85rem;" data-bs-dismiss="modal">Entendido</button>
+      </div>
+
+    </div>
+  </div>
+</div>

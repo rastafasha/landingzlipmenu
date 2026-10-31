@@ -1,0 +1,184 @@
+// ==========================================
+// 🚀 COREOGRAFÍA CINEMÁTICA "APPLE STYLE"
+// ==========================================
+
+// --- TIEMPOS DE LA INTRO (Línea de tiempo total: ~3.5s) ---
+// 0.0s -> Empieza animación Isotipo (Logo) centrado.
+// 1.0s -> El Isotipo se desplaza a la izquierda.
+// 1.2s -> El Logotipo (Tipo) emerge hacia la derecha desde atrás del logo.
+// 3.0s -> Todo el conjunto se mantiene visible.
+// 3.2s -> El Isotipo sube y el contenedor colapsa su altura hacia arriba.
+
+.intro-container {
+  position: fixed; // Cambiado a fixed para bloquear el scroll durante la intro
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #FFFFFF;
+  z-index: 9999; // Máxima prioridad sobre cualquier componente
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  will-change: height, transform;
+  animation: collapseIntro 0.6s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+  animation-delay: 3.2s; // Espera que termine toda la coreografía interna
+}
+.intro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; // Contenedor ancla
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  animation: raiseLogo 0.5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+  animation-delay: 3.2s;
+}
+
+.anim-logo {
+  width: 150px;
+  height: auto;
+  z-index: 2;
+  position: relative; // Mantiene su flujo pero permite transformaciones
+  will-change: transform, opacity;
+  animation: 
+    initLogo 1s cubic-bezier(0.15, 1, 0.3, 1) forwards,
+    shiftLogoLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards 1.0s; 
+}
+
+.anim-tipo {
+  width: 300px;
+  height: auto;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  
+  // 👈 Clave del éxito: Sacado del flujo para que no afecte el centro del logo inicial
+  position: absolute; 
+  left: 43%; // Alineado al centro exacto del contenedor
+  transform: translate(0%, 0) scale(0.95); // Centrado inicial perfecto en X
+  
+  will-change: transform, opacity;
+  animation: revealTipoFromLogo 0.8s cubic-bezier(0.15, 1, 0.3, 1) forwards;
+  animation-delay: 1.2s;
+}
+
+// ==========================================
+// 🎞️ KEYFRAMES DE LA INTRO
+// ==========================================
+
+// 1. Entrada original del Isotipo en el centro
+@keyframes initLogo {
+  0% {
+    opacity: 0;
+    transform: scale(2.5);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+// 2. Desplazamiento del Isotipo a la izquierda
+@keyframes shiftLogoLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-140px); // 👈 Ajusta este valor según cuánto quieras mover el isotipo a la izquierda
+  }
+}
+
+// 3. Salida del Logotipo (tipo) desde atrás del Isotipo hacia la derecha
+@keyframes revealTipoFromLogo {
+  0% {
+    opacity: 0;
+    // Comienza centrado horizontalmente
+    transform: translate(-50%, 0%) scale(0.95); 
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    // 👈 El primer valor (60px) define la posición final a la derecha del Isotipo. 
+    // Ajusta este número para acercarlo o alejarlo del logo final.
+    transform: translate(30px, 0%) scale(1); 
+    filter: blur(0);
+  }
+}
+
+// 4. El logo sube en la fase final
+@keyframes raiseLogo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+// 5. El contenedor colapsa su altura hacia el techo
+@keyframes collapseIntro {
+  0% {
+    height: 100vh;
+  }
+  100% {
+    height: 0vh;
+    pointer-events: none;
+    visibility: hidden;
+  }
+}
+
+// ==========================================
+// 🎬 REVELACIÓN EN CADENA DEL HERO CONTENT
+// ==========================================
+
+@keyframes appleHeroReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes appleMockupReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) rotateX(6deg) scale(0.96);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: appleHeroReveal 1.2s cubic-bezier(0.15, 1, 0.3, 1) forwards;
+}
+
+.mockup-reveal {
+  opacity: 0;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+  animation: appleMockupReveal 1.4s cubic-bezier(0.15, 1, 0.3, 1) forwards;
+}
+
+// Sincronización perfecta: Comienzan a actuar a partir del segundo 3.4s cuando el intro clarea
+$intro-total-duration: 3.4s;
+
+.hero-delay-1 { animation-delay: #{$intro-total-duration + 0.05s}; } // Badge
+.hero-delay-2 { animation-delay: #{$intro-total-duration + 0.15s}; } // Titular H1
+.hero-delay-3 { animation-delay: #{$intro-total-duration + 0.25s}; } // Subtítulo
+.hero-delay-4 { animation-delay: #{$intro-total-duration + 0.35s}; } // Botones CTA
+.hero-delay-5 { animation-delay: #{$intro-total-duration + 0.50s}; } // Mockup 3D físico

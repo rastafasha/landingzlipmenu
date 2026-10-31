@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClosingCtaComponent } from './closing-cta.component';
+import { FeaturesComponent } from './features.component';
 
-describe('ClosingCtaComponent', () => {
-  let component: ClosingCtaComponent;
-  let fixture: ComponentFixture<ClosingCtaComponent>;
+describe('FeaturesComponent', () => {
+  let component: FeaturesComponent;
+  let fixture: ComponentFixture<FeaturesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClosingCtaComponent]
+      imports: [FeaturesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ClosingCtaComponent);
+    fixture = TestBed.createComponent(FeaturesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

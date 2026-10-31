@@ -1,0 +1,207 @@
+<section id="admin-preview" class="py-5 bg-light border-top border-bottom border-apple">
+    <div class="container px-4" style="max-width: 1140px;">
+
+        <!-- Encabezado de la Sección -->
+        <div class="row mb-5 text-center justify-content-center">
+            <div class="col-lg-8">
+                <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Backoffice
+                    Profesional</span>
+                <h2 class="display-5 fw-bold tracking-tight mb-3">Un ERP robusto para dueños de negocios</h2>
+                <p class="lead text-apple-muted mx-auto"
+                    style="max-width: 600px; font-size: 1.125rem; font-weight: 400;">
+                    Toma el control absoluto de tu operación. Automatiza los procesos de auditoría, autoriza facturas y
+                    habilita las divisas de cobro preferidas por tus clientes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contenedor del Panel Administrativo de simulación -->
+        <div class="w-100 bg-white border border-apple rounded-4 p-3 shadow-sm mx-auto" style="max-width: 1000px;">
+
+            <!-- Barra Superior del Sistema Panel -->
+            <div
+                class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center border-bottom border-apple pb-3 mb-4 gap-3">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="fw-bold text-dark m-0" style="font-size: 1.1rem; tracking-spacing: -0.02em;">
+                        zlipmenu <span class="text-apple-light fw-normal">Admin Panel</span>
+                    </span>
+                    <span class="badge bg-secondary-subtle text-dark font-monospace"
+                        style="font-size: 10px;">v19.2</span>
+                </div>
+
+                <!-- Pestañas del Sistema (Signals) -->
+                <div class="nav bg-apple-light p-1 rounded-pill border border-apple">
+                    <button class="btn btn-sm rounded-pill px-3 fw-medium border-0 py-1 transition-all"
+                        [ngClass]="activeTab() === 'metrics' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+                        (click)="setTab('metrics')">
+                        📊 Ventas & Auditoría
+                    </button>
+                    <button class="btn btn-sm rounded-pill px-3 fw-medium border-0 py-1 transition-all"
+                        [ngClass]="activeTab() === 'payments' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+                        (click)="setTab('payments')">
+                        ⚙️ Pasarelas Multimoneda
+                    </button>
+                </div>
+            </div>
+
+            <!-- VISTA 1: DASHBOARD Y MÉTRICAS (Basado en pág 12, 13 y 24) -->
+            @if (activeTab() === 'metrics') {
+            <div class="row g-4 animate-fade">
+
+                <!-- Columna Izquierda: Kpis Rápidos y Gráfico -->
+                <div class="col-lg-7">
+                    <div class="row g-3 mb-3">
+                        <div class="col-6">
+                            <div class="border border-apple bg-apple-light rounded-3 p-3">
+                                <span class="text-apple-muted small d-block mb-1">Ventas Mensuales</span>
+                                <div class="h3 fw-bold text-dark mb-0">$5,420.00</div>
+                                <span class="text-success small fw-medium font-monospace" style="font-size: 11px;">↑ Mes
+                                    Actual</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="border border-apple bg-apple-light rounded-3 p-3">
+                                <span class="text-apple-muted small d-block mb-1">Pedidos en Proceso</span>
+                                <div class="h3 fw-bold text-dark mb-0">INPROCESS</div>
+                                <span class="text-primary small fw-medium" style="font-size: 11px;">Esperando
+                                    WhatsApp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico Minimalista Vectorial (Simulación pág 13/23) -->
+                    <div class="border border-apple rounded-3 p-3 bg-white">
+                        <span class="text-dark fw-bold small d-block mb-3">Historial Analítico Anual</span>
+                        <div class="d-flex align-items-end justify-content-between pt-3 px-2 border-bottom border-apple"
+                            style="height: 140px;">
+                            <div class="bg-primary bg-opacity-25 rounded-top text-center"
+                                style="height: 60%; width: 14%;"><span class="small font-monospace"
+                                    style="font-size: 9px;">Ene</span></div>
+                            <div class="bg-primary bg-opacity-25 rounded-top text-center"
+                                style="height: 95%; width: 14%;"><span class="small font-monospace"
+                                    style="font-size: 9px;">Feb</span></div>
+                            <div class="bg-primary rounded-top text-center position-relative shadow-sm"
+                                style="height: 40%; width: 14%;">
+                                <span class="position-absolute top-0 start-50 translate-middle badge bg-dark"
+                                    style="font-size: 8px;">$37</span>
+                                <span class="small font-monospace text-white" style="font-size: 9px;">Mar</span>
+                            </div>
+                            <div class="bg-primary bg-opacity-10 rounded-top text-center"
+                                style="height: 5%; width: 14%;"><span class="small font-monospace"
+                                    style="font-size: 9px;">Abr</span></div>
+                            <div class="bg-primary bg-opacity-10 rounded-top text-center"
+                                style="height: 5%; width: 14%;"><span class="small font-monospace"
+                                    style="font-size: 9px;">May</span></div>
+                            <div class="bg-primary bg-opacity-10 rounded-top text-center"
+                                style="height: 8%; width: 14%;"><span class="small font-monospace"
+                                    style="font-size: 9px;">Jun</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Simulación de Factura / Ticket Digital (Basado en pág 24 y 14) -->
+                <div class="col-lg-5">
+                    <div
+                        class="border border-apple rounded-3 p-4 bg-apple-light h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="font-monospace text-dark fw-bold" style="font-size: 11px;">FACTURA N°:
+                                    68C971B98A...</span>
+                                <span class="badge bg-success text-white rounded-pill px-2.5 py-1"
+                                    style="font-size: 10px; font-weight: 500;">Aprobado</span>
+                            </div>
+
+                            <div class="bg-white rounded-3 p-3 border border-apple mb-3 small">
+                                <div class="text-apple-light border-bottom border-apple pb-1 mb-2 uppercase font-monospace"
+                                    style="font-size: 9px;">Facturado a</div>
+                                <div class="text-dark fw-bold">Juan Doe</div>
+                                <div class="text-apple-muted" style="font-size: 12px;">juandoe&#64;gmail.com
+                                </div>
+                                <div class="text-apple-muted" style="font-size: 12px;">Venezuela / Caracas</div>
+                            </div>
+
+                            <div class="bg-white rounded-3 p-3 border border-apple small">
+                                <div class="text-apple-light border-bottom border-apple pb-1 mb-2 uppercase font-monospace"
+                                    style="font-size: 9px;">Detalles del Importe</div>
+                                <div class="d-flex justify-content-between text-dark mb-1">
+                                    <span>1x Baguette Jamón</span>
+                                    <span class="fw-medium">$4.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between text-dark mb-1">
+                                    <span>1x Té de Durazno Frío</span>
+                                    <span class="fw-medium">$6.00</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between text-dark border-top border-apple pt-2 mt-2 fw-bold">
+                                    <span>Total Pagado:</span>
+                                    <span class="text-primary">$13.40</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-4">
+                            <button class="btn btn-dark rounded-pill py-2 w-100 small fw-medium"
+                                style="font-size: 12px; background-color: #1D1D1F;">
+                                📥 Descargar PDF
+                            </button>
+                            <button class="btn btn-primary rounded-pill py-2 w-100 small fw-medium"
+                                style="font-size: 12px; background-color: #0071E3;">
+                                ✓ Activar Compra
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            }
+
+            <!-- VISTA 2: PASARELAS MULTIMONEDA (Solución al error del compilador) -->
+            <!-- VISTA 2: PASARELAS MULTIMONEDA (Cierre completo sin cortes) -->
+      @if (activeTab() === 'payments') {
+        <div class="table-responsive animate-fade">
+          <span class="text-dark fw-bold small d-block mb-3 px-1">Gestión Centralizada de Pasarelas de Pago Directo</span>
+          <table class="table align-middle border border-apple rounded-3 overflow-hidden bg-white m-0" style="font-size: 0.9rem;">
+            <thead class="table-light text-apple-muted" style="font-size: 11px; text-transform: uppercase; font-family: monospace;">
+              <tr>
+                <th class="ps-4 py-3">Pasarela / Método</th>
+                <th class="py-3">Divisa Nativa</th>
+                <th class="py-3 text-center">Estado del Canal</th>
+                <th class="pe-4 py-3 text-end">Acciones POS</th>
+              </tr>
+            </thead>
+            <tbody class="text-dark">
+              @for (gateway of gateways; track gateway.name) {
+                <tr class="border-bottom border-apple">
+                  <td class="ps-4 py-3 fw-bold">
+                    <span class="me-2">
+                      @switch (gateway.type) {
+                        @case ('paypal') { <span>🔹</span> }
+                        @case ('zelle') { <span>🔸</span> }
+                        @case ('pagomovil') { <span>🇻🇪</span> }
+                        @case ('banco') { <span>🏦</span> }
+                        @case ('cash') { <span>💵</span> }
+                      }
+                    </span>
+                    {{ gateway.name }}
+                  </td>
+                  <td class="py-3 font-monospace text-apple-muted">{{ gateway.currency }}</td>
+                  <td class="py-3 text-center">
+                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill font-monospace" style="font-size: 10px; font-weight: 500;">
+                      {{ gateway.status }}
+                    </span>
+                  </td>
+                  <td class="pe-4 py-3 text-end">
+                    <button class="btn btn-outline-dark rounded-pill py-1 px-3 border-apple font-medium" style="font-size: 11px;">
+                      Ajustes
+                    </button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      }
+
+    </div> <!-- Cierre del contenedor blanco del Admin Panel -->
+  </div>
+</section>

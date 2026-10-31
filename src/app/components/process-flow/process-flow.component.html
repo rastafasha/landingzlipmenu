@@ -1,0 +1,137 @@
+<section id="como-funciona" class="py-5 bg-white border-bottom border-apple">
+  <div class="container px-4" style="max-width: 1140px;">
+    
+    <!-- Encabezado -->
+    <div class="row mb-5 text-center justify-content-center">
+      <div class="col-lg-8">
+        <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Flujo de Operación</span>
+        <h2 class="display-5 fw-bold tracking-tight mb-3">¿Cómo funciona el ecosistema Zlipmenu?</h2>
+        <p class="lead text-apple-muted mx-auto" style="max-width: 550px; font-size: 1.125rem; font-weight: 400;">
+          Una sincronización perfecta desde que se selecciona un producto hasta que se audita el pago directo.
+        </p>
+        
+        <!-- Interruptor de Perspectiva Estilo Apple -->
+        <div class="d-inline-flex bg-apple-light p-1 rounded-pill mt-4 border border-apple">
+          <button 
+            class="btn btn-sm rounded-pill px-4 py-1.5 fw-medium border-0 transition-all"
+            [ngClass]="currentPerspective() === 'cliente' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+            (click)="setPerspective('cliente')">
+            📱 Vista del Cliente
+          </button>
+          <button 
+            class="btn btn-sm rounded-pill px-4 py-1.5 fw-medium border-0 transition-all"
+            [ngClass]="currentPerspective() === 'comercio' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
+            (click)="setPerspective('comercio')">
+            🏪 Vista del Comercio (ERP)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLUJO DINÁMICO EN 3 PASOS -->
+    <div class="row g-4 justify-content-center mt-2">
+      
+      @if (currentPerspective() === 'cliente') {
+        <!-- PASO 1 CLIENTE -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 01</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Explora y Modifica</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                El cliente abre la carta digital QR, navega por las categorías y selecciona ítems (como baguettes o pizzas) viendo precios y ofertas reales.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Navegación de la Carta]
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 2 CLIENTE -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 02</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Estructuración y WhatsApp</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                Al confirmar el carrito, se genera un número de orden automático (ej. Orden #624) y se empaqueta un mensaje limpio directo al WhatsApp del local.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Carrito y Mensaje WhatsApp]
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 3 CLIENTE -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 03</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Pago Directo & Delivery</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                Una vez validado el pedido por el local, el cliente escoge si desea Pickup o Delivery, selecciona el método de pago (Zelle, Efectivo, Pago Móvil) y registra el comprobante.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Selección de Pago y Delivery]
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (currentPerspective() === 'comercio') {
+        <!-- PASO 1 COMERCIO -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 01</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Recepción en Tienda / Pedidos</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                El establecimiento visualiza las comandas entrantes desde su módulo web. El sistema aloja el ID único del pedido en estatus inicial <span class="font-monospace text-primary">INPROCESS</span>.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Lista de Pedidos Pendientes]
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 2 COMERCIO -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 02</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Auditoría del Pago Directo</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                El administrador cruza el número de referencia enviado por el cliente. Aprueba o rechaza conciliaciones bancarias (Dólares, Euros o Bolívares) en tiempo real desde el ERP.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Control de Conciliación de Transferencias]
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 3 COMERCIO -->
+        <div class="col-md-4 animate-fade">
+          <div class="p-4 bg-apple-light border border-apple rounded-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <div class="font-monospace text-primary fw-bold mb-2" style="font-size: 12px;">PASO 03</div>
+              <h3 class="h5 fw-bold text-dark mb-2">Activación y Cierre de Caja</h3>
+              <p class="text-apple-muted small m-0" style="line-height: 1.6;">
+                Al presionar <span class="font-bold">Activar</span>, el sistema descuenta los productos del Stock general, actualiza las métricas del CRM y suma el monto al reporte financiero mensual.
+              </p>
+            </div>
+            <div class="bg-white rounded-3 border border-apple mt-4 p-3 text-center text-apple-light font-monospace" style="aspect-ratio: 16/10; font-size: 11px;">
+              [Captura: Dashboard de Ventas Consolidadas]
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+
+  </div>
+</section>

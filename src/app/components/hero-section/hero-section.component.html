@@ -1,50 +1,89 @@
-<section class="hero-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="hero-badge">
-                    <span class="material-symbols-outlined fs-6 me-2">verified</span>
-                    Digitaliza hoy mismo
-                </div>
-                <h1 class="hero-title">
-                    Transforma el menú de tu restaurante en una <span>máquina de pedidos</span> digitales.
-                </h1>
-                <p class="fs-5 text-muted mb-5 pe-lg-5">
-                    Olvídate de los PDFs lentos por WhatsApp y las historias borrosas de Instagram. Crea un menú
-                    interactivo, veloz y personalizado con tu propio subdominio en minutos.
-                </p>
-                <div class="d-flex flex-column flex-sm-row gap-3">
-                    <button class="btn btn-brand-primary btn-lg px-0 py-0">
-                        <a [href]="'https://wa.me/' + phone + '?text=' + message" target="_blank"
-                            class="btn btn-brand-primary btn-lg   text-decoration-none">
-                            <i class="fab fa-whatsapp me-2"></i> Probar gratis
-                        </a>
-                    </button>
+<!-- 🎬 CONTENEDOR INTRO: Controla el baile inicial de la marca y migra al Navbar automáticamente -->
+<div class="intro-container">
+  <img src="assets/svg/logo-zlipmenu_logo.svg" alt="Zlipmenu Isotipo" class="anim-logo" />
+  <img src="assets/svg/logo-zlipmenu_tipo.svg" alt="Zlipmenu Logotipo" class="anim-tipo" />
+</div>
+<!-- Hero Section Principal -->
+<div class="position-relative overflow-hidden py-5 my-md-5">
+  <div class="container text-center d-flex flex-column align-items-center px-4" style="max-width: 800px;">
+    
+    <!-- Tag / Badge Multirubro -->
+    <span class="d-inline-flex align-items-center gap-2 bg-apple-light border border-apple text-apple-muted small px-3 py-1 rounded-pill mb-4 text-uppercase tracking-wider hero-reveal hero-delay-1" style="font-size: 11px; font-weight: 500;">
+      <span class="rounded-circle bg-success" style="width: 6px; height: 6px;"></span> Ahora para cualquier rubro comercial
+    </span>
 
-                    <a href="https://pizzeria.zlipmenu.com/" target="_blank">
-                        <button class="btn btn-brand-outline btn-lg px-4 py-3">Ver Ejemplo</button>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 position-relative">
-                <div class="shadow-lg rounded-5 overflow-hidden">
-                    <img alt="Zlipmenu Visual" class="img-fluid w-100"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-XU1KQZrLrrvGEI87bukUSYgizlFHhDCqtb_Tu_rk961Ds2X45HGSR_W6fWUV5D3gP35Fl_1M93BNPpM67JlVunKNck7hiV8IRtts_JCk31nzsUs8_nHf7eC45UhXgH8MBQUv1DLKSp8emlCM6Ncay8TXMCykzetmghJ0cXQXSQ15QLPllJmzPxPPkNmxr_HEgGNexGqRZNgxB18TjLqpc8MlEke3N0YzJGbbSMvwxjkc3uoW9T6_i5Is15E-sa_cM1DOK_pA7G4Z" />
-                </div>
-                <!-- Floating Badge -->
-                <div class="position-absolute top-0 end-0 translate-middle-y me-4 d-none d-md-block">
-                    <div class="glass-card p-3 d-flex align-items-center gap-3" style="border-radius: 1rem;">
-                        <div class="bg-success-subtle rounded-circle p-2 d-flex align-items-center justify-content-center"
-                            style="width: 48px; height: 48px;">
-                            <span class="material-symbols-outlined text-success">bolt</span>
-                        </div>
-                        <div>
-                            <small class="text-muted d-block" style="font-size: 0.7rem;">Carga en</small>
-                            <span class="fw-bold fs-5">0.8s</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Titular Principal -->
+    <h1 class="display-4 fw-bold tracking-tight text-dark mb-4 px-md-3 hero-reveal hero-delay-2" style="line-height: 1.15; letter-spacing: -0.025em;">
+      Crea el catálogo digital de tu negocio. <span class="text-apple-light">Vende sin intermediarios.</span>
+    </h1>
+
+    <!-- Subtítulo -->
+    <p class="lead text-apple-muted mb-4 px-md-5 mx-md-2 hero-reveal hero-delay-3" style="font-size: 1.15rem; line-height: 1.6; font-weight: 400;">
+      Gestiona tus productos en tiempo real, automatiza tus pedidos por WhatsApp y ofrece una experiencia de compra impecable desde cualquier dispositivo.
+    </p>
+
+    <!-- Botones de Acción Duales -->
+    <div class="d-flex flex-column flex-sm-row align-items-center gap-3 mb-5 w-100 justify-content-center hero-reveal hero-delay-4">
+      <a href="https://vercel.app" target="_blank" class="btn-apple-primary text-center w-auto">
+        Crear mi catálogo gratis
+      </a>
+      <a href="#como-funciona" class="btn-apple-link py-2">
+        Ver cómo funciona 
+        <svg class="bi bi-chevron-right" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </a>
     </div>
-</section>
+
+    <!-- Preview del Producto Flotante (Mockup Completo Restaurado) -->
+    <div class="w-100 bg-white border border-apple p-2 rounded-4 shadow-sm mockup-reveal hero-delay-5" style="max-width: 960px; margin-top: 2rem;">
+      <div class="rounded-3 overflow-hidden bg-apple-light border border-light position-relative" style="aspect-ratio: 16/9;">
+        
+        <!-- Simulación del Admin Panel (admin-ang-mall) -->
+        <div class="position-absolute inset-0 p-4 p-md-5 d-flex gap-4 text-start h-100 w-100">
+          <div class="bg-white rounded-3 p-3 border border-apple d-none d-md-block" style="width: 25%;">
+            <div class="bg-light rounded mb-3" style="height: 16px; width: 75%;"></div>
+            <div class="d-flex flex-column gap-2">
+              <div class="bg-light rounded" style="height: 12px; width: 100%;"></div>
+              <div class="bg-light rounded" style="height: 12px; width: 85%;"></div>
+              <div class="bg-light rounded" style="height: 12px; width: 80%;"></div>
+            </div>
+          </div>
+          <div class="flex-grow-1 bg-white rounded-3 p-4 border border-apple d-flex flex-column justify-content-between">
+            <div>
+              <div class="bg-dark rounded mb-2" style="height: 24px; width: 35%;"></div>
+              <div class="bg-light rounded mb-4" style="height: 12px; width: 60%;"></div>
+              <div class="row g-3">
+                <div class="col-6 col-sm-4">
+                  <div class="border border-apple p-2 rounded-3 bg-apple-light">
+                    <div class="bg-light rounded mb-2" style="aspect-ratio: 1; width: 100%;"></div>
+                    <div class="bg-dark rounded" style="height: 12px; width: 70%;"></div>
+                  </div>
+                </div>
+                <div class="col-6 col-sm-4">
+                  <div class="border border-apple p-2 rounded-3 bg-apple-light">
+                    <div class="bg-light rounded mb-2" style="aspect-ratio: 1; width: 100%;"></div>
+                    <div class="bg-dark rounded" style="height: 12px; width: 50%;"></div>
+                  </div>
+                </div>
+                <div class="col-4 d-none d-sm-block">
+                  <div class="border border-apple p-2 rounded-3 bg-apple-light">
+                    <div class="bg-light rounded mb-2" style="aspect-ratio: 1; width: 100%;"></div>
+                    <div class="bg-dark rounded" style="height: 12px; width: 75%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-light rounded align-self-end" style="height: 12px; width: 96px;"></div>
+          </div>
+        </div>
+
+        <span class="position-absolute bottom-0 start-0 m-3 bg-dark text-white rounded px-2 py-1 font-monospace" style="font-size: 10px;">
+          admin-zlipmenu.vercel.app
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+

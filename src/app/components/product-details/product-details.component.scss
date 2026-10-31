@@ -1,0 +1,17 @@
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.bg-muted {
+  background-color: #86868b;
+}
+
+// Pequeña animación fluida para el flujo de sincronización
+@keyframes pulse-dots {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse {
+  animation: pulse-dots 2s infinite ease-in-out;
+}
