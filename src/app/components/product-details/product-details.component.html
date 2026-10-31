@@ -13,41 +13,41 @@
       </div>
       <div class="col-md-6 order-md-1">
         <!-- Visualización limpia del Panel de Control -->
-       <!-- Columna del Carrusel Extraído de la Interfaz -->
-          <div id="adminPanelCarousel"
-              class="carousel slide carousel-dark shadow-lg border rounded-4 overflow-hidden bg-light"
-              data-bs-ride="carousel">
+        <!-- Columna del Carrusel Extraído de la Interfaz -->
+        <div id="adminPanelCarousel"
+          class="carousel slide carousel-dark shadow-lg border rounded-4 overflow-hidden bg-light"
+          data-bs-ride="carousel">
 
-              <!-- Indicadores de barra inferiores -->
-              <div class="carousel-indicators">
-                @for (screen of adminScreens(); track $index) {
-                <button type="button" data-bs-target="#adminPanelCarousel" [attr.data-bs-slide-to]="$index"
-                  [class.active]="$first" [attr.aria-current]="$first ? 'true' : null" [attr.aria-label
-                  Roth]="'Slide ' + ($index + 1)">
-                </button>
-                }
+          <!-- Indicadores de barra inferiores -->
+          <div class="carousel-indicators">
+            @for (screen of adminScreens(); track $index) {
+            <button type="button" data-bs-target="#adminPanelCarousel" [attr.data-bs-slide-to]="$index"
+              [class.active]="$first" [attr.aria-current]="$first ? 'true' : null" [attr.aria-label
+              Roth]="'Slide ' + ($index + 1)">
+            </button>
+            }
+          </div>
+
+          <!-- Diapositivas del Carrusel con Imágenes Reales -->
+          <div class="carousel-inner">
+            @for (screen of adminScreens(); track screen.url) {
+            <div class="carousel-item" [class.active]="$first" data-bs-interval="4000">
+              <!-- Imagen real del panel -->
+              <img [src]="screen.url" class="d-block w-100 img-fluid" [alt]="screen.title"
+                style="object-fit: cover; max-height: 420px;">
+
+              <!-- Caption Informativo Minimalista Inferior -->
+              <div
+                class="carousel-caption d-none d-md-block bg-white bg-opacity-90 border-top p-3 px-4 start-0 end-0 bottom-0 text-start">
+                <h6 class="fw-bold text-dark mb-0">{{ screen.title }}</h6>
+                <p class="text-muted xl-micro-text mb-0">{{ screen.desc }}</p>
               </div>
+            </div>
+            }
+          </div>
 
-              <!-- Diapositivas del Carrusel con Imágenes Reales -->
-              <div class="carousel-inner">
-                @for (screen of adminScreens(); track screen.url) {
-                <div class="carousel-item" [class.active]="$first" data-bs-interval="4000">
-                  <!-- Imagen real del panel -->
-                  <img [src]="screen.url" class="d-block w-100 img-fluid" [alt]="screen.title"
-                    style="object-fit: cover; max-height: 420px;">
-
-                  <!-- Caption Informativo Minimalista Inferior -->
-                  <div
-                    class="carousel-caption d-none d-md-block bg-white bg-opacity-90 border-top p-3 px-4 start-0 end-0 bottom-0 text-start">
-                    <h6 class="fw-bold text-dark mb-0">{{ screen.title }}</h6>
-                    <p class="text-muted xl-micro-text mb-0">{{ screen.desc }}</p>
-                  </div>
-                </div>
-                }
-              </div>
-
-              <!-- Flechas de Control Laterales (Estilo Premium Delgado) -->
-              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#adminPanelCarousel"
+          <!-- Flechas de Control Laterales (Estilo Premium Delgado) -->
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#adminPanelCarousel"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon aria-hidden-true"></span>
                 <span class="visually-hidden">Anterior</span>
@@ -58,7 +58,7 @@
                 <span class="visually-hidden">Siguiente</span>
               </button> -->
 
-            </div>
+        </div>
       </div>
     </div>
 
@@ -81,11 +81,11 @@
           <div class="landing-smartphone-notch"></div>
 
           <div class="landing-smartphone-screen">
-             <video autoplay >
+            <video autoplay muted loop playsinline preload="auto" class="w-full h-auto rounded-xl">
               <source src="assets/media/menuapp.mp4" type="video/mp4">
               Tu navegador no admite la etiqueta de video.
             </video>
-            
+
           </div>
           <!-- Home indicator bar -->
           <div class="landing-smartphone-home-bar"></div>
