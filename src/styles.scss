@@ -21,8 +21,8 @@
 // 4. Estilos Core e Interacciones Globales de la Aplicación
 body {
   font-family: 'Inter', sans-serif;
-  background-color: --body-bg;
-  color: --body-color;
+  background-color: var(--body-bg);
+  color: var(--body-color);
   letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,7 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6, .navbar-brand {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  color: --azul-zlipmenu;
+  color: var(--azul-zlipmenu);
   letter-spacing: -0.025em;
 }
 
@@ -43,7 +43,7 @@ html {
 
 // Selección de texto premium nativa en iOS/Mac
 ::selection {
-  background-color: --primary;
+  background-color: var(--primary);
   color: #fff;
 }
 
@@ -54,15 +54,15 @@ html {
 }
 
 .text-apple-muted {
-  color: --apple-gray;
+  color: var(--apple-gray);
 }
 
 .text-apple-light {
-  color: --apple-muted-gray;
+  color: var(--apple-muted-gray);
 }
 
 .border-apple {
-  border-color: --apple-border !important;
+  border-color: var(--apple-border) !important;
 }
 
 .bg-apple-light {
@@ -71,7 +71,7 @@ html {
 
 // 6. Componentes de Botones Estilo Apple / Klyntic
 .btn-apple-primary {
-  background-color: --azul-zlipmenu;
+  background-color: var(--azul-zlipmenu);
   color: #fff;
   border-radius: 50px;
   padding: 0.75rem 2rem;
@@ -92,7 +92,7 @@ html {
 }
 
 .btn-apple-link {
-  color: --azul-zlipmenu;
+  color: var(--azul-zlipmenu);
   font-weight: 500;
   font-size: 0.875rem;
   text-decoration: none;
@@ -116,14 +116,14 @@ html {
 }
 
 .btn-primary{
-  background: --azul-zlipmenu;
-  border-color:--azul-zlipmenu;
+  background: var(--azul-zlipmenu);
+  border-color:var(--azul-zlipmenu);
 }
 
 // Estructura Bento Grid (Tarjetas Premium Minimalistas)
 .bento-card {
   background: #ffffff;
-  border: 1px solid --apple-border;
+  border: 1px solid var(--apple-border);
   border-radius: 1.25rem;
   padding: 2.25rem;
   height: 100%;
