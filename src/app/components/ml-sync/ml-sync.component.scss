@@ -1,0 +1,132 @@
+.zl-meli-section {
+  h2 {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+  
+  .max-w-440 {
+    max-width: 440px;
+    @media (max-width: 767.98px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .fs-7 { font-size: 0.8rem; }
+  
+  .xl-micro-text {
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  // --- MOCKUP DEL PANEL DE REPLICACIÓN ---
+  .zl-sync-panel {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    height: 380px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .zl-panel-header {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 16px;
+
+      .zl-panel-name {
+        color: #1e293b;
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .zl-panel-tag {
+        font-size: 8px;
+        color: #94a3b8;
+        letter-spacing: 0.05em;
+      }
+
+      .zl-badge-connected, .zl-badge-syncing {
+        font-size: 9px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+      }
+      .zl-badge-connected { color: #0f172a; background-color: #f1f5f9; border-color: #cbd5e1; }
+      .zl-badge-syncing { color: #b45309; background-color: #fffbeb; border-color: #fef3c7; }
+    }
+
+    .zl-panel-screen {
+      position: relative;
+      flex: 1;
+      background-color: #f8fafc;
+
+      .zl-channel-box {
+        border-color: #e2e8f0 !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+
+        .zl-channel-tag {
+          font-size: 8px;
+          color: #0f172a;
+          background-color: #f1f5f9;
+          font-weight: 700;
+          padding: 1px 4px;
+          border-radius: 3px;
+          display: inline-block;
+        }
+
+        .bg-warning-light {
+          background-color: #fffbeb !important;
+        }
+      }
+
+      // Animación de rotación del icono sincrónico central
+      .zl-sync-arrow-container {
+        .zl-sync-icon {
+          width: 20px;
+          height: 20px;
+          transition: transform 0.2s ease;
+          
+          &.zl-spin-active {
+            animation: zl-spin 1s infinite linear;
+          }
+        }
+      }
+
+      // Consola de Logs e Historial de Eventos
+      .zl-webhook-log {
+        .zl-log-title {
+          font-size: 9px;
+          color: #94a3b8;
+          font-weight: 700;
+        }
+
+        .zl-log-container {
+          background-color: #ffffff;
+          border-color: #e2e8f0 !important;
+          font-size: 10px;
+          line-height: 1.6;
+          height: 90px;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+// Keyframes
+@keyframes zl-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.zl-fade-in { animation: zl-txFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes zl-txFadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,130 @@
+.zl-whatsapp-section {
+  h2 {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+  
+  .max-w-440 {
+    max-width: 440px;
+    @media (max-width: 767.98px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .fs-7 { font-size: 0.8rem; }
+  
+  .xl-micro-text {
+    font-size: 9px;
+    letter-spacing: 0.02em;
+  }
+
+  // --- PANEL MOCKUP DE CHAT DE WHATSAPP ---
+  .zl-whatsapp-panel {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 420px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .zl-panel-header {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 14px 16px;
+
+      .zl-avatar-bot {
+        width: 32px;
+        height: 32px;
+        background-color: #0f172a;
+        color: #ffffff;
+        border-radius: 50%;
+        font-size: 13px;
+      }
+
+      .zl-bot-name {
+        color: #1e293b;
+        font-weight: 800;
+        font-size: 13px;
+      }
+      .zl-bot-status {
+        font-size: 8px;
+        color: #94a3b8;
+        letter-spacing: 0.05em;
+      }
+
+      .zl-badge-whatsapp {
+        font-size: 9px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 6px;
+        color: #15803d;
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+      }
+    }
+
+    .zl-panel-screen {
+      position: relative;
+      flex: 1;
+      background-color: #f8fafc;
+      overflow-y: hidden;
+
+      // Burbujas de mensajería
+      .zl-bubble {
+        max-width: 85%;
+        border-color: #e2e8f0 !important;
+        line-height: 1.4;
+
+        p {
+          font-size: 12px;
+        }
+
+        &.zl-bubble-user {
+          background-color: #f1f5f9;
+          border-bottom-right-radius: 2px !important;
+        }
+
+        &.zl-bubble-bot {
+          background-color: #ffffff;
+          border-bottom-left-radius: 2px !important;
+        }
+      }
+
+      // Estilos para el adjunto de factura PDF
+      .zl-pdf-attachment {
+        border-color: #e2e8f0 !important;
+        
+        .zl-pdf-icon {
+          width: 28px;
+          height: 32px;
+          background-color: #ef4444;
+          font-size: 9px;
+          font-weight: 900;
+          line-height: 32px;
+          text-align: center;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+  }
+}
+
+// Clases de Animación Nativas
+.zl-fade-in { animation: zl-msgFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.zl-slide-up { animation: zl-msgSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes zl-msgFadeIn {
+  from { opacity: 0; transform: scale(0.97) translateY(4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes zl-msgSlideUp {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}

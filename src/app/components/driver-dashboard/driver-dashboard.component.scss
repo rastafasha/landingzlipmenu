@@ -1,0 +1,57 @@
+.xl-micro-text { font-size: 9px; letter-spacing: 0.02em; }
+.max-w-85 { 
+  max-width: 85%; 
+}
+.fs-7 { font-size: 0.8rem; }
+.shadow-xs { box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+
+// Estilos específicos para las tablas de simulación del Admin
+.zl-fraud-section {
+  .table {
+    margin-bottom: 0;
+    th { font-weight: 700; padding: 10px 8px; }
+    td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; }
+  }
+  .bg-success-subtle { background-color: #f0fdf4 !important; color: #16a34a !important; }
+  .bg-danger-subtle { background-color: #fef2f2 !important; color: #dc2626 !important; }
+  .bg-warning-subtle { background-color: #fffbeb !important; color: #d97706 !important; }
+}
+
+// Estructura del Mockup del Teléfono (Chofer)
+.zl-phone {
+  position: relative; width: 310px; height: 530px; background-color: #ffffff;
+  border: 1px solid #e2e8f0; border-radius: 40px; padding: 10px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+
+  .zl-phone-notch {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 100px; height: 13px; background-color: #ffffff;
+    border-bottom: 1px solid #edf2f7; border-radius: 0 0 12px 12px; z-index: 30;
+  }
+  .zl-phone-header {
+    border-bottom: 1px solid #f1f5f9; padding: 12px 4px 6px 4px;
+    .zl-app-name { color: #0f172a; font-weight: 800; font-size: 12px; }
+    .zl-app-tag { font-size: 8px; color: #94a3b8; }
+    .zl-badge-offline, .zl-badge-online { font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 4px; }
+    .zl-badge-offline { color: #64748b; background-color: #f8fafc; border: 1px solid #e2e8f0; }
+    .zl-badge-online { color: #16a34a; background-color: #f0fdf4; border: 1px solid #bbf7d0; }
+  }
+  .zl-phone-screen {
+    position: relative; flex: 1; margin: 10px 0; border-radius: 16px; background-color: #f8fafc; border: 1px solid #edf2f7; overflow: hidden;
+    .zl-map-grid { position: absolute; inset: 0; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 14px 14px; opacity: 0.4; }
+    .zl-tag-inprocess { font-size: 8px; font-weight: 700; color: #3b82f6; background-color: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 6px; border-radius: 4px; }
+    .zl-tag-incoming { font-size: 9px; font-weight: 700; color: #b45309; background-color: #fffbeb; border: 1px solid #fef3c7; padding: 1px 5px; border-radius: 4px; }
+    .zl-customer-title { font-size: 13px; }
+    .zl-customer-sub { font-size: 10px; }
+    .zl-progress-bar { position: absolute; top: 0; left: 0; height: 2px; background-color: #0f172a; transition: width 1s linear; }
+  }
+  .zl-phone-home { width: 60px; height: 3px; background-color: #e2e8f0; border-radius: 2px; margin: 0 auto; }
+}
+
+// Clases de Animación Compiladas Nativamente
+.zl-fade-in { animation: zl-fi 0.3s ease-out forwards; }
+.zl-slide-up { animation: zl-su 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes zl-fi { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+@keyframes zl-su { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: translate3d(0, 0, 0); } }

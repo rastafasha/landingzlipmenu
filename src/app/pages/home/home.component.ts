@@ -11,12 +11,16 @@ import { AdminDashboardComponent } from '../../components/admin-dashboard/admin-
 import { ProcessFlowComponent } from '../../components/process-flow/process-flow.component';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { HeroSectionComponent } from '../../components/hero-section/hero-section.component';
+import { DriverDashboardComponent } from '../../components/driver-dashboard/driver-dashboard.component';
+import { AntiFraudeComponent } from '../../components/anti-fraude/anti-fraude.component';
+import { MlSyncComponent } from '../../components/ml-sync/ml-sync.component';
+import { WhatsappAutomatizacionComponent } from '../../components/whatsapp-automatizacion/whatsapp-automatizacion.component';
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule, ScrollRevealDirective, FeaturesComponent,
     ProductDetailsComponent, PricingComponent, FooterComponent,
-    ValuePropositionComponent, DemoSelectorComponent, AdminDashboardComponent, ProcessFlowComponent, HeroSectionComponent],
+    ValuePropositionComponent, DemoSelectorComponent, AdminDashboardComponent, ProcessFlowComponent, HeroSectionComponent, DriverDashboardComponent, AntiFraudeComponent, MlSyncComponent, WhatsappAutomatizacionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

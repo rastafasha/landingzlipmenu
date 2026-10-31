@@ -1,0 +1,112 @@
+<section class="zl-meli-section py-5 bg-white border-top border-light">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-column-reverse flex-md-row">
+      
+      <!-- COLUMNA IZQUIERDA: Monitor de Sincronización API Wrapper -->
+      <div class="col-md-6 d-flex justify-content-center">
+        <div class="zl-sync-panel">
+          <!-- Header del Panel -->
+          <div class="zl-panel-header d-flex justify-content-between align-items-center">
+            <div class="zl-title-group text-start">
+              <span class="zl-panel-name d-block">MercadoLibre API Wrapper</span>
+              <span class="zl-panel-tag font-monospace">CONEXIÓN BIDIRECCIONAL (MELI-VE)</span>
+            </div>
+            <span [ngClass]="isSyncing() ? 'zl-badge-syncing' : 'zl-badge-connected'">
+              {{ isSyncing() ? 'SINCRONIZANDO' : 'CONECTADO' }}
+            </span>
+          </div>
+
+          <!-- Pantalla Central del Comparador de Stock/Precios -->
+          <div class="zl-panel-screen p-3 d-flex flex-col justify-content-center">
+            <div class="row g-3 align-items-center position-relative">
+              
+              <!-- Caja Canal Zlipmenu -->
+              <div class="col-5">
+                <div class="zl-channel-box text-start p-3 bg-white rounded-3 border">
+                  <span class="zl-channel-tag font-monospace d-block mb-1">POS ZLIPMENU</span>
+                  <div class="zl-skeleton-wrap">
+                    <h6 class="fw-bold text-dark text-truncate mb-1">{{ productMock().title }}</h6>
+                    <div class="d-flex justify-content-between font-monospace xl-micro-text text-muted mt-2">
+                      <span>Precio: <strong>${{ productMock().price }}</strong></span>
+                      <span>Stock: <strong>{{ productMock().stock }}</strong></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vector / Indicador Central de Sincronización -->
+              <div class="col-2 text-center p-0">
+                <div class="zl-sync-arrow-container">
+                  <svg [ngClass]="{'zl-spin-active': isSyncing()}" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="zl-sync-icon text-muted">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Caja Canal MercadoLibre -->
+              <div class="col-5">
+                <div class="zl-channel-box text-start p-3 bg-white rounded-3 border">
+                  <span class="zl-channel-tag font-monospace d-block mb-1 text-warning bg-warning-light">MERCADOLIBRE VE</span>
+                  <div class="zl-skeleton-wrap">
+                    <h6 class="fw-bold text-dark text-truncate mb-1">{{ productMock().title }}</h6>
+                    <div class="d-flex justify-content-between font-monospace xl-micro-text text-muted mt-2">
+                      <span>Precio: <strong [ngClass]="{'text-warning animate-pulse': isSyncing()}">${{ productMock().price }}</strong></span>
+                      <span>Stock: <strong [ngClass]="{'text-warning animate-pulse': isSyncing()}">{{ productMock().stock }}</strong></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Registro de Eventos / Webhooks de Venta en Vivo -->
+            <div class="zl-webhook-log text-start mt-4">
+              <span class="zl-log-title font-monospace d-block mb-2">WEBHOOKS LISTENERS (APP.NOTIFICATIONS)</span>
+              <div class="zl-log-container font-monospace p-2 rounded-3 text-muted border bg-white">
+                <div class="zl-log-line">
+                  <span class="text-success">[OK]</span> listener_sync: Component AdminDashboardComponent montado con éxito.
+                </div>
+                @if (isSyncing()) {
+                  <div class="zl-log-line text-dark zl-fade-in">
+                    <span class="text-warning">[API]</span> PUT /items/MLV-992314/stock -> Payload: {{ '{' }} available_quantity: {{ productMock().stock }} {{ '}' }}
+                  </div>
+                } @else {
+                  <div class="zl-log-line text-muted">
+                    <span class="text-secondary">[IDLE]</span> Escuchando eventos asíncronos de MercadoLibre...
+                  </div>
+                }
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Footer del Panel -->
+          <div class="zl-panel-footer p-2 text-center border-top">
+            <span class="xl-micro-text text-muted font-monospace">STATUS: WEBSOCKET_CONNECTED • ASYNC_DELAY: 14ms</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUMNA DERECHA: Copy Explicativo de la Landing -->
+      <div class="col-md-6 text-center text-md-start">
+        <h2 class="display-6 fw-black text-dark lh-sm mb-3">
+          Sincronización con <br>
+          <span class="text-muted fw-bold">MercadoLibre en tiempo real</span>
+        </h2>
+        <p class="text-secondary mb-4 max-w-440">
+          Centraliza tus canales digitales de venta. Modifica títulos, precios y variaciones directamente desde el panel administrativo de Zlipmenu e impacta tus publicaciones oficiales en MercadoLibre de inmediato. Registra ventas automáticas mediante webhooks asíncronos en tu historial del POS de manera directa.
+        </p>
+        
+        <div class="zl-action-block">
+          <button (click)="triggerSyncSimulation()" [disabled]="isSyncing()" class="btn btn-outline-dark px-4 py-2.5 fw-bold rounded-3 shadow-sm d-inline-flex align-items-center gap-2 text-uppercase fs-7 tracking-wider">
+            <span>{{ isSyncing() ? 'Actualizando API...' : 'Simular Cambio de Stock (-1)' }}</span>
+            <svg xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" style="width: 14px; height: 14px;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

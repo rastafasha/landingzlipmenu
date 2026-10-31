@@ -1,0 +1,120 @@
+.zl-fraud-section {
+  h2 {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+  
+  .max-w-440 {
+    max-width: 440px;
+    @media (max-width: 767.98px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .fs-7 { font-size: 0.8rem; }
+  
+  .xl-micro-text {
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  // --- MOCKUP DEL PANEL ANTIFRAUDE ---
+  .zl-fraud-panel {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 420px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .zl-panel-header {
+      border-bottom: 1px solid #f1f5f9;
+      padding: 16px;
+
+      .zl-panel-name {
+        color: #1e293b;
+        font-weight: 800;
+        font-size: 14px;
+      }
+      .zl-panel-tag {
+        font-size: 8px;
+        color: #94a3b8;
+        letter-spacing: 0.05em;
+      }
+
+      .zl-badge-secure, .zl-badge-warning {
+        font-size: 9px;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+      }
+      .zl-badge-secure { color: #0f172a; background-color: #f1f5f9; border-color: #cbd5e1; }
+      .zl-badge-warning { color: #b45309; background-color: #fffbeb; border-color: #fef3c7; }
+    }
+
+    .zl-panel-screen {
+      position: relative;
+      flex: 1;
+      background-color: #f8fafc;
+      overflow-y: hidden;
+
+      .zl-analysis-card {
+        background-color: #ffffff;
+        border: 1px solid #cbd5e1;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        
+        .zl-tag-process {
+          font-size: 9px;
+          color: #475569;
+          font-weight: 700;
+          background-color: #f1f5f9;
+          padding: 1px 6px;
+          border-radius: 4px;
+        }
+      }
+
+      .zl-tx-history {
+        .zl-section-title {
+          font-size: 10px;
+          color: #94a3b8;
+          font-weight: 700;
+        }
+
+        .zl-tx-item {
+          transition: all 0.2s ease-in-out;
+          border-color: #e2e8f0 !important;
+
+          .zl-status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Clases de Animación Nativas
+.zl-fade-in { animation: zl-txFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.zl-slide-up { animation: zl-txSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes zl-txFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes zl-txSlideUp {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
