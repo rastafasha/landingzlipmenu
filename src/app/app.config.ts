@@ -1,11 +1,15 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter, withComponentInputBinding, withInMemoryScrolling } from '@angular/router';
+import { provideRouter, withComponentInputBinding, withInMemoryScrolling, withRouterConfig } from '@angular/router';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(
       routes,
+      // 1. Aquí es donde se coloca 'onSameUrlNavigation' de forma válida en Angular moderno
+      withRouterConfig({
+        onSameUrlNavigation: 'reload'
+      }),
       // 🌟 Esta es la función correcta en las versiones modernas de Angular
       withInMemoryScrolling({ 
         anchorScrolling: 'enabled',     // Activa el desplazamiento por anclas

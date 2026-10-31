@@ -15,7 +15,14 @@
   --apple-border: #E8E8ED;
   --azul-zlipmenu: #1d2e4a;
 }
+html {
+  scroll-behavior: smooth;
+}
 
+// Esto le dice al navegador que deje un espacio libre arriba al hacer scroll por ancla
+section[id] {
+  scroll-margin-top: 80px; // Ajusta los píxeles según la altura de tu menú superior
+}
 
 
 // 4. Estilos Core e Interacciones Globales de la Aplicación
