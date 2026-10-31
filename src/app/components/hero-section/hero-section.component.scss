@@ -182,3 +182,67 @@ $intro-total-duration: 3.4s;
 .hero-delay-3 { animation-delay: #{$intro-total-duration + 0.25s}; } // Subtítulo
 .hero-delay-4 { animation-delay: #{$intro-total-duration + 0.35s}; } // Botones CTA
 .hero-delay-5 { animation-delay: #{$intro-total-duration + 0.50s}; } // Mockup 3D físico
+
+
+
+// ==========================================
+// 📱 OPTIMIZACIÓN RESPONSIVA PARA MÓVILES
+// ==========================================
+@media (max-width: 767.98px) {
+  
+  // Forzamos al wrapper a alinear todo de forma central y horizontal como un bloque único
+  .intro-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 16px; // 👈 Este valor controla la separación exacta y controlada entre la Z y el texto
+  }
+
+  // Ajustamos el tamaño de la Z (Isotipo)
+  .anim-logo {
+    width: 65px !important; // Tamaño idóneo para la pantalla de un smartphone
+    height: auto !important;
+    
+    // Sobrescribimos el keyframe para que en móvil use la traslación limpia de flexbox
+    animation: 
+      initLogo 1s cubic-bezier(0.15, 1, 0.3, 1) forwards,
+      shiftLogoLeftMobile 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards 1.0s;
+  }
+
+  // Ajustamos el texto "zlipmenu" (Logotipo)
+  .anim-tipo {
+    width: 130px !important; // Escala proporcional al isotipo
+    height: auto !important;
+    
+    // 💡 LA SOLUCIÓN: Anulamos el comportamiento absoluto de escritorio para que entre en el flujo Flex
+    position: relative !important; 
+    left: auto !important;
+    
+    animation: revealTipoFromLogoMobile 0.8s cubic-bezier(0.15, 1, 0.3, 1) forwards;
+    animation-delay: 1.2s;
+  }
+}
+
+// ==========================================
+// 🎞️ KEYFRAMES EXCLUSIVOS PARA MÓVIL
+// ==========================================
+
+// Desplazamiento reducido del Isotipo hacia la izquierda en pantallas pequeñas
+@keyframes shiftLogoLeftMobile {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(0); } // Mantenemos el flujo natural sin desfases artificiales
+}
+
+@keyframes revealTipoFromLogoMobile {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateX(-10px); // Emerge ligeramente desde la izquierda de forma suave
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+    filter: blur(0);
+  }
+}

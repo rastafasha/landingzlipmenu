@@ -2,8 +2,22 @@
   <div class="container">
     <div class="row align-items-center g-5">
       
-      <!-- Tabla Clásica del ERP/Admin en miniatura -->
-      <div class="col-md-6 d-flex justify-content-center">
+      <!-- TEXTO INFORMATIVO (Se muestra primero en escritorio) -->
+      <div class="col-md-6 text-center text-md-start order-md-1">
+        <h2 class="display-6 fw-black text-dark lh-sm mb-3">
+          Escudo Antifraude <br>
+          <span class="text-muted fw-bold">Mitiga contracargos al instante</span>
+        </h2>
+        <p class="text-secondary mb-4 max-w-440">
+          Protege tu flujo de caja con nuestro algoritmo avanzado de validación. Verifica automáticamente reportes de Pago Móvil y Zelle mediante conciliación bancaria directa, cruzando referencias duplicadas y previniendo fraudes antes de liberar la comanda.
+        </p>
+        <button (click)="triggerSimulation()" [disabled]="isAnalyzing()" class="btn btn-outline-dark px-4 py-2.5 fw-bold rounded-3 shadow-sm text-uppercase fs-7 tracking-wider">
+          {{ isAnalyzing() ? 'Conciliando...' : 'Simular Intento de Fraude' }}
+        </button>
+      </div>
+
+      <!-- PANEL DE AUDITORÍA (Se muestra a la derecha en escritorio) -->
+      <div class="col-md-6 d-flex justify-content-center order-md-2">
         <div class="zl-fraud-panel w-100 border rounded-3 bg-white shadow-sm overflow-hidden" style="max-width: 490px;">
           <div class="zl-panel-header p-3 border-b border-light d-flex justify-content-between align-items-center bg-light">
             <div class="text-start">
@@ -49,20 +63,6 @@
             ALGORITMO ANTIFRAUDE ACTIVO • PREVENCIÓN DE DUPLICADOS DE REFERENCIAS
           </div>
         </div>
-      </div>
-
-      <!-- Contenido Comercial -->
-      <div class="col-md-6 text-center text-md-start">
-        <h2 class="display-6 fw-black text-dark lh-sm mb-3">
-          Escudo Antifraude <br>
-          <span class="text-muted fw-bold">Mitiga contracargos al instante</span>
-        </h2>
-        <p class="text-secondary mb-4 max-w-440">
-          Protege tu flujo de caja con nuestro algoritmo avanzado de validación. Verifica automáticamente reportes de Pago Móvil y Zelle mediante conciliación bancaria directa, cruzando referencias duplicadas y previniendo fraudes antes de liberar la comanda.
-        </p>
-        <button (click)="triggerSimulation()" [disabled]="isAnalyzing()" class="btn btn-outline-dark px-4 py-2.5 fw-bold rounded-3 shadow-sm text-uppercase fs-7 tracking-wider">
-          {{ isAnalyzing() ? 'Conciliando...' : 'Simular Intento de Fraude' }}
-        </button>
       </div>
 
     </div>
