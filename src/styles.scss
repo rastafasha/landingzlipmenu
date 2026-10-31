@@ -11,6 +11,7 @@ $font-family-base: 'Inter', sans-serif;
 $apple-gray: #6E6E73;
 $apple-muted-gray: #86868B;
 $apple-border: #E8E8ED;
+$azul-zlipmenu: #1d2e4a;
 
 // 3. Importación obligatoria del Core de Bootstrap 5
 // @import "bootstrap/scss/bootstrap";
@@ -30,7 +31,7 @@ body {
 h1, h2, h3, h4, h5, h6, .navbar-brand {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  color: #1D1D1F;
+  color: $azul-zlipmenu;
   letter-spacing: -0.025em;
 }
 
@@ -68,7 +69,7 @@ html {
 
 // 6. Componentes de Botones Estilo Apple / Klyntic
 .btn-apple-primary {
-  background-color: #1D1D1F;
+  background-color: $azul-zlipmenu;
   color: #fff;
   border-radius: 50px;
   padding: 0.75rem 2rem;
@@ -89,7 +90,7 @@ html {
 }
 
 .btn-apple-link {
-  color: $primary;
+  color: $azul-zlipmenu;
   font-weight: 500;
   font-size: 0.875rem;
   text-decoration: none;
@@ -110,6 +111,11 @@ html {
   svg {
     transition: transform 0.2s ease;
   }
+}
+
+.btn-primary{
+  background: $azul-zlipmenu;
+  border-color:$azul-zlipmenu;
 }
 
 // Estructura Bento Grid (Tarjetas Premium Minimalistas)

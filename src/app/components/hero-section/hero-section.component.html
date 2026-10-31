@@ -24,9 +24,12 @@
 
     <!-- Botones de Acción Duales -->
     <div class="d-flex flex-column flex-sm-row align-items-center gap-3 mb-5 w-100 justify-content-center hero-reveal hero-delay-4">
-      <a href="https://vercel.app" target="_blank" class="btn-apple-primary text-center w-auto">
-        Crear mi catálogo gratis
+       <a [href]="'https://wa.me/' + phone + '?text=' + message" target="_blank"
+        class="btn-apple-primary text-center w-auto">
+        <i class="fab fa-whatsapp me-2"></i> Crear mi catálogo gratis
       </a>
+
+     
       <a href="#como-funciona" class="btn-apple-link py-2">
         Ver cómo funciona 
         <svg class="bi bi-chevron-right" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">

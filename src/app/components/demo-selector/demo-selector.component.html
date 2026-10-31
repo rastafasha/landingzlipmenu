@@ -6,12 +6,12 @@
     
     <!-- Selector de pestañas reactivo estilo Apple -->
     <div class="d-inline-flex bg-apple-light p-1 rounded-pill mb-5 border border-apple">
-      <button 
+      <!-- <button 
         class="btn btn-sm rounded-pill px-4 fw-medium border-0 transition-all"
         [ngClass]="activeDemo() === 'panaderia' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
         (click)="setDemo('panaderia')">
         🥐 Panadería & Pastelería
-      </button>
+      </button> -->
       <button 
         class="btn btn-sm rounded-pill px-4 fw-medium border-0 transition-all"
         [ngClass]="activeDemo() === 'restaurante' ? 'bg-white text-dark shadow-sm' : 'text-apple-muted bg-transparent'"
@@ -36,7 +36,7 @@
             <!-- Cuerpo dinámico de productos -->
             <div class="p-3 flex-grow-1 overflow-y-auto style-scrollbar">
               
-              @let currentProducts = activeDemo() === 'panaderia' ? panaderiaProducts : restauranteProducts;
+              @let currentProducts = activeDemo() === 'restaurante' ? panaderiaProducts : restauranteProducts;
               
               @for (item of currentProducts; track item.name) {
                 <div class="mb-3 border-bottom border-apple pb-2">
@@ -94,7 +94,7 @@
               <!-- Reemplaza con la ruta de tu imagen de QR de Pizzería (pág 8) -->
               <div class="bg-light border border-dashed rounded d-flex flex-column align-items-center justify-content-center animate-fade" style="width: 140px; height: 140px; font-size: 11px; color: #86868b;">
                 <span><img src="assets/qr/static-qr-code-menuPizzeria.png" style="width: 100%;" alt=""></span>
-                <span class="font-monospace mt-1" style="font-size: 9px;">SlideDish Pizza</span>
+                <span class="font-monospace mt-1" style="font-size: 9px;">Pizzería</span>
               </div>
             }
             
