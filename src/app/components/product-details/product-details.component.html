@@ -1,57 +1,94 @@
-<section id="caracteristicas" class="py-5  bg-white  border-bottom border-apple">
+<section id="caracteristicas" class="py-5  bg-white border-top border-bottom border-apple">
   <div class="container px-4" style="max-width: 1140px;">
-    
+
     <!-- Bloque 1: El Panel Administrativo (admin-ang-mall) -->
     <div class="row align-items-center py-5 g-5">
       <div class="col-md-6 order-md-2">
         <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Control Absoluto</span>
         <h2 class="display-6 fw-bold tracking-tight mb-3">Un panel robusto para administrar todo tu negocio.</h2>
         <p class="lead text-apple-muted" style="font-size: 1.05rem; font-weight: 400; line-height: 1.6;">
-          Inspirado en la gestión multi-tienda ("mall"). Controla inventarios masivos, crea múltiples sucursales, actualiza categorías, asigna precios y gestiona variantes complejas desde una interfaz limpia y veloz.
+          Inspirado en la gestión multi-tienda ("mall"). Controla inventarios masivos, crea múltiples sucursales,
+          actualiza categorías, asigna precios y gestiona variantes complejas desde una interfaz limpia y veloz.
         </p>
       </div>
       <div class="col-md-6 order-md-1">
         <!-- Visualización limpia del Panel de Control -->
-        <div class="bg-apple-light border border-apple rounded-4 p-4 shadow-sm">
-          <div class="bg-white rounded-3 p-3 border border-apple">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-              <div class="bg-dark rounded" style="height: 14px; width: 30%;"></div>
-              <div class="bg-light rounded-pill" style="height: 24px; width: 60px;"></div>
+       <!-- Columna del Carrusel Extraído de la Interfaz -->
+          <div id="adminPanelCarousel"
+              class="carousel slide carousel-dark shadow-lg border rounded-4 overflow-hidden bg-light"
+              data-bs-ride="carousel">
+
+              <!-- Indicadores de barra inferiores -->
+              <div class="carousel-indicators">
+                @for (screen of adminScreens(); track $index) {
+                <button type="button" data-bs-target="#adminPanelCarousel" [attr.data-bs-slide-to]="$index"
+                  [class.active]="$first" [attr.aria-current]="$first ? 'true' : null" [attr.aria-label
+                  Roth]="'Slide ' + ($index + 1)">
+                </button>
+                }
+              </div>
+
+              <!-- Diapositivas del Carrusel con Imágenes Reales -->
+              <div class="carousel-inner">
+                @for (screen of adminScreens(); track screen.url) {
+                <div class="carousel-item" [class.active]="$first" data-bs-interval="4000">
+                  <!-- Imagen real del panel -->
+                  <img [src]="screen.url" class="d-block w-100 img-fluid" [alt]="screen.title"
+                    style="object-fit: cover; max-height: 420px;">
+
+                  <!-- Caption Informativo Minimalista Inferior -->
+                  <div
+                    class="carousel-caption d-none d-md-block bg-white bg-opacity-90 border-top p-3 px-4 start-0 end-0 bottom-0 text-start">
+                    <h6 class="fw-bold text-dark mb-0">{{ screen.title }}</h6>
+                    <p class="text-muted xl-micro-text mb-0">{{ screen.desc }}</p>
+                  </div>
+                </div>
+                }
+              </div>
+
+              <!-- Flechas de Control Laterales (Estilo Premium Delgado) -->
+              <!-- <button class="carousel-control-prev" type="button" data-bs-target="#adminPanelCarousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon aria-hidden-true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#adminPanelCarousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon aria-hidden-true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button> -->
+
             </div>
-            <div class="space-y-3">
-              <div class="bg-light rounded w-100" style="height: 40px;"></div>
-              <div class="bg-light rounded w-100" style="height: 40px;"></div>
-              <div class="bg-light rounded w-100" style="height: 40px;"></div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
     <!-- Bloque 2: El Catálogo PWA para Clientes (menuStrapizza) -->
     <div class="row align-items-center py-5 g-5  border-apple ">
       <div class="col-md-6">
-        <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Experiencia de Usuario</span>
+        <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Experiencia de
+          Usuario</span>
         <h2 class="display-6 fw-bold tracking-tight mb-3">Velocidad instantánea en cualquier celular.</h2>
         <p class="lead text-apple-muted" style="font-size: 1.05rem; font-weight: 400; line-height: 1.6;">
-          Tus clientes no tienen que descargar pesadas aplicaciones. Con nuestra tecnología web ultraligera, acceden a tu catálogo instantáneamente escaneando un código QR o desde el enlace en tu bio de Instagram.
+          Tus clientes no tienen que descargar pesadas aplicaciones. Con nuestra tecnología web ultraligera, acceden a
+          tu catálogo instantáneamente escaneando un código QR o desde el enlace en tu bio de Instagram.
         </p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 d-flex justify-content-center">
         <!-- Visualización simulada de Smartphone Claro -->
-        <div class="d-flex justify-content-center">
-          <div class="bg-white border border-apple p-2 rounded-5 shadow-sm position-relative" style="width: 260px; aspect-ratio: 9/19;">
-            <div class="bg-apple-light rounded-5 h-100 w-100 p-3 d-flex flex-col justify-content-between">
-              <div>
-                <div class="bg-dark rounded-circle mx-auto mb-3" style="width: 50px; height: 50px;"></div>
-                <div class="bg-dark rounded mx-auto mb-2" style="height: 14px; width: 60%;"></div>
-                <div class="bg-muted rounded mx-auto mb-4" style="height: 8px; width: 40%;"></div>
-                <div class="bg-white rounded-3 p-2 border border-apple mb-2" style="height: 60px;"></div>
-                <div class="bg-white rounded-3 p-2 border border-apple" style="height: 60px;"></div>
-              </div>
-              <div class="bg-primary text-white rounded-pill text-center py-2 font-semibold small" style="font-size: 11px;">Enviar pedido a WhatsApp</div>
-            </div>
+        <div class="landing-smartphone-frame shadow-2xl">
+
+          <!-- Notch / Isla Dinámica -->
+          <div class="landing-smartphone-notch"></div>
+
+          <div class="landing-smartphone-screen">
+             <video autoplay >
+              <source src="assets/media/menuapp.mp4" type="video/mp4">
+              Tu navegador no admite la etiqueta de video.
+            </video>
+            
           </div>
+          <!-- Home indicator bar -->
+          <div class="landing-smartphone-home-bar"></div>
         </div>
       </div>
     </div>
@@ -62,7 +99,9 @@
         <span class="text-primary small fw-semibold text-uppercase tracking-wider d-block mb-2">Infraestructura</span>
         <h2 class="display-6 fw-bold tracking-tight mb-3">Sincronización total en tiempo real.</h2>
         <p class="lead text-apple-muted" style="font-size: 1.05rem; font-weight: 400; line-height: 1.6;">
-          ¿Te quedaste sin stock o cambiaste un precio? Modifícalo en tu panel y se actualizará al instante en el teléfono de tus clientes. Todo respaldado por una API potente construida para soportar ráfagas masivas de tráfico sin caídas.
+          ¿Te quedaste sin stock o cambiaste un precio? Modifícalo en tu panel y se actualizará al instante en el
+          teléfono de tus clientes. Todo respaldado por una API potente construida para soportar ráfagas masivas de
+          tráfico sin caídas.
         </p>
       </div>
       <div class="col-md-6 order-md-1">
@@ -71,7 +110,9 @@
           <div class="d-flex justify-content-center align-items-center gap-4 position-relative py-3">
             <div class="bg-white border border-apple rounded-3 p-3" style="width: 70px;">💻</div>
             <div class="text-apple-light tracking-widest animate-pulse">••••►</div>
-            <div class="bg-primary text-white rounded-circle p-3 shadow" style="width: 60px; height: 60px; display: inline-flex; align-items: center; justify-content: center;">☁️</div>
+            <div class="bg-primary text-white rounded-circle p-3 shadow"
+              style="width: 60px; height: 60px; display: inline-flex; align-items: center; justify-content: center;">☁️
+            </div>
             <div class="text-apple-light tracking-widest animate-pulse">◄••••</div>
             <div class="bg-white border border-apple rounded-3 p-3" style="width: 70px;">📱</div>
           </div>
