@@ -1,0 +1,7 @@
+User-agent: *
+
+# Permitir explícitamente el rastreo del landing y las páginas legales
+Allow: /
+
+# Ubicación del mapa del sitio
+Sitemap: https://zlipmenu.com
