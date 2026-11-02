@@ -12,3 +12,106 @@
     transform: translateY(-2px);
   }
 }
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.carousel-viewport {
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex !important;       
+  flex-direction: row !important; 
+  flex-wrap: nowrap !important;   
+  gap: 1.5rem;                    
+  overflow-x: auto !important;    
+  scroll-behavior: smooth;
+  padding-bottom: 1.5rem;
+  scrollbar-width: none;          
+  -ms-overflow-style: none;       
+  
+  &::-webkit-scrollbar {
+    display: none;                
+  }
+}
+
+.custom-card-item {
+  width: 88% !important;          // En celulares toma casi todo el ancho de pantalla para dar máxima legibilidad
+  flex-shrink: 0 !important;      // Evita que Angular o Bootstrap compriman los bloques
+  display: block !important;
+  
+  @media (min-width: 768px) {
+    width: 55% !important;        // En tablets se ensancha para mostrar más contenido interno
+  }
+
+  @media (min-width: 1200px) {
+    width: 52% !important;        // En pantallas grandes (escritorio) adopta un formato panorámico premium
+  }
+}
+
+.bg-apple-light {
+  background-color: #F5F5F7;      
+  height: 280px;                  // Altura adaptada para móviles
+  cursor: pointer;
+  border-radius: 2rem !important; 
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;                // Un margen interno más generoso para que las interfaces respiren dentro del marco
+
+  @media (min-width: 768px) {
+    height: 380px;                
+  }
+
+  @media (min-width: 1200px) {
+    height: 400px;                // Incrementamos el alto proporcional en escritorios para balancear el nuevo ancho
+  }
+  
+  &:hover {
+    transform: scale(1.015);      // Una micro-escala sutil muy al estilo Apple Cards
+  }
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  // CAMBIAMOS DE 'COVER' A 'CONTAIN' 👈 Esto hace que el software se encoja para verse COMPLETO sin cortes
+  object-fit: contain !important; 
+  // Centramos el panel comercial en medio de su tarjeta gris
+  object-position: center center !important; 
+}
+
+.font-legal {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding-top: 0.5rem;
+}
+
+.btn-nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #E8E8ED;
+  color: #1D1D1F;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  &:hover {
+    background-color: #D2D2D7;
+  }
+
+  &:active {
+    transform: scale(0.95);       
+  }
+
+  span {
+    font-size: 1.6rem;
+    transform: translateY(-3px);
+    display: inline-block;
+  }
+}
+
+
+

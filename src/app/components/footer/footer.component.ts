@@ -1,14 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component} from '@angular/core';
+import { RouterLink } from '@angular/router';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
   currentYear: number = new Date().getFullYear();
+
+  private modalInstance: any;
 
   phone: string = '584241874370'; 
   message: string = '';
@@ -37,5 +42,6 @@ export class FooterComponent {
     }
   }, 50);
 }
+
 
 }
