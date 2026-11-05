@@ -24,13 +24,13 @@ export class ValuePropositionComponent {
       title: 'ERP & POS',
       tagline: 'Punto de venta y control administrativo unificado.',
       description: 'Monitorea stock, ventas e inventario masivo en tiempo real de forma ágil desde un dashboard centralizado.',
-      imgUrl: 'assets/admin/dashboard.webp'
+      imgUrl: 'assets/admin/atencion_local.png'
     },
     {
       title: 'CRM Nativo',
       tagline: 'Conoce las preferencias de tus compradores.',
-      description: 'Mantén un historial claro de consumos, analiza métricas y genera estrategias efectivas para fidelizar a tus clientes.',
-      imgUrl: 'assets/admin/usuarios.webp'
+      description: 'Administra los pedidos de tus compradores, manten siempre el orden.',
+      imgUrl: 'assets/admin/pedidos.png'
     },
     {
       title: 'WhatsApp Everywhere',
@@ -39,10 +39,16 @@ export class ValuePropositionComponent {
       imgUrl: 'assets/admin/messWhatsap.webp'
     },
     {
+      title: 'Multiples tipos de pago',
+      tagline: 'Tus preferencias de pago siempre a la vista.',
+      description: 'Habilita pagos directos de forma transparente. ',
+      imgUrl: 'assets/admin/tiposPago.png'
+    },
+    {
       title: 'Multimoneda & Pago Directo',
       tagline: 'Muestra precios en múltiples divisas en tiempo real.',
-      description: 'Habilita pagos directos de forma transparente. Opciones de tasas Euro, Dolar Bcv (actualización automatica) y personalizadas',
-      imgUrl: 'assets/admin/transferencias.webp'
+      description: 'Opciones de tasas Euro, Dolar Bcv (actualización automatica) y tasas personalizadas',
+      imgUrl: 'assets/admin/transferencias.png'
     }
   ];
 

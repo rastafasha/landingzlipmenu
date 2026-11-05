@@ -16,10 +16,12 @@ export class ProductDetailsComponent {
   
     // Las 6 capturas de pantalla de Klyntic Paciente
     public adminScreens = signal([
-    { url: 'assets/admin/dashboard.webp', title: 'Dashboard Principal', desc: 'Comportamiento diario y mensual de las ventas.' },
-    { url: 'assets/admin/slide_tiendas.webp', title: 'Gestión de Sucursales', desc: 'Administración de comandas en proceso (INPROCESS).' },
-    { url: 'assets/admin/slide_productos.webp', title: 'Control de Catálogo', desc: 'Edición rápida de precios, stock y categorías.' },
-    { url: 'assets/admin/transferencias.webp', title: 'Auditoría de Caja', desc: 'Conciliación de Pago Móvil, Zelle y transferencias.' }
+    { url: 'assets/admin/dashboard_notificacion.png', title: 'Dashboard Principal', desc: 'Comportamiento diario y mensual de las ventas.' },
+    { url: 'assets/admin/tiendas.png', title: 'Gestión de Sucursales', desc: 'Administración de comandas en proceso (INPROCESS).' },
+    { url: 'assets/admin/productos.png', title: 'Control de Catálogo', desc: 'Edición rápida de precios, stock y categorías, envialos a Mercadolibre.' },
+    { url: 'assets/admin/uploadMasivo.png', title: 'Carga Masiva de productos', desc: 'importa desde tu archivo Excel todos tus productos.' },
+    { url: 'assets/admin/transferencias.png', title: 'Auditoría de Caja', desc: 'Conciliación de Pago Móvil, Zelle y transferencias.' },
+    { url: 'assets/admin/delivery_map.png', title: 'Administra tus Envíos', desc: 'Ten siempre la ubicación de tus Choferes.' },
   ]);
 
 
