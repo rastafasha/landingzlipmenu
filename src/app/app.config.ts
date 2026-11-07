@@ -1,6 +1,7 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter, withComponentInputBinding, withInMemoryScrolling, withRouterConfig } from '@angular/router';
 import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,8 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'enabled' // Restaura el scroll arriba al cambiar de página
       }),
       withComponentInputBinding() // Excelente práctica para capturar parámetros fácilmente
-    )
+    ),
+     provideHttpClient(),
+    
   ]
 };

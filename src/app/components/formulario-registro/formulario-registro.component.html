@@ -1,0 +1,111 @@
+<section id="registro" class="py-5  border-bottom border-apple">
+  <div class="zlipmenu-register-box py-5 ">
+
+    <div class="container-fluid px-4 px-md-5" style="max-width: 1140px;">
+      <div class="text-center mb-4">
+        <h1 class="fw-bold">Digitaliza tu Menú Hoy</h1>
+        <p class="text-muted small">Completa el formulario para evaluar tu negocio e inicializar tu panel administrador.
+        </p>
+      </div>
+
+      <form [formGroup]="registroForm" (ngSubmit)="enviarSolicitud()" class="row g-3" autocomplete="off">
+
+        <!-- Nombre del Dueño -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">Nombre del Propietario</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light text-muted border-end-0"><i class="fas fa-user"></i></span>
+            <input type="text" formControlName="nombreDueno" class="form-control border-start-0 ps-0"
+              [class.is-invalid]="campoInvalido('nombreDueno')" placeholder="Ej. Carlos Mendoza">
+          </div>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">Correo Electrónico</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light text-muted border-end-0"><i class="fas fa-envelope"></i></span>
+            <input type="email" formControlName="email" class="form-control border-start-0 ps-0"
+              [class.is-invalid]="campoInvalido('email')" placeholder="nombre@gmail.com">
+          </div>
+        </div>
+
+        <!-- Teléfono WhatsApp -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">Teléfono / WhatsApp</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light text-muted border-end-0"><i class="fab fa-whatsapp"></i></span>
+            <input type="tel" formControlName="telefono" class="form-control border-start-0 ps-0"
+              [class.is-invalid]="campoInvalido('telefono')" placeholder="+58 412 1234567">
+          </div>
+        </div>
+        <!-- Especialidad -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">Categoría <span class="req">*</span></label>
+          <input type="text" required="required" class="form-control apple-input py-2.5 rounded-3"
+            formControlName="categoriaTexto" [class.is-invalid]="campoInvalido('categoriaTexto')" placeholder="Ej. Pizzerıa, Varios..." />
+          
+        </div>
+        <!-- Pais -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">País </label>
+          <select class="form-select apple-input py-2.5 rounded-3" [class.is-invalid]="campoInvalido('pais')" formControlName="pais">
+            <option *ngFor="let data of paises" [value]="data._id">
+              {{data.pais}}
+            </option>
+          </select>
+        </div>
+
+        <!-- Nombre del Local -->
+        <div class="col-12 col-md-6">
+          <label class="form-label text-secondary fw-semibold small">Nombre de tu Comercio</label>
+          <div class="input-group">
+            <span class="input-group-text bg-light text-muted border-end-0"><i class="fas fa-store"></i></span>
+            <input type="text" formControlName="nombreLocal" (input)="onNombreLocalChange($event)"
+              class="form-control border-start-0 ps-0" [class.is-invalid]="campoInvalido('nombreLocal')"
+              placeholder="Ej. Burger Station">
+          </div>
+        </div>
+
+        <!-- Slug Personalizado URL de Zlipmenu -->
+        <div class="col-12 col-md-6 mx-auto text-center">
+          <label class="form-label text-secondary fw-semibold small d-block mb-2">Tu Enlace Personalizado
+            Deseado</label>
+
+          <div class="input-group domain-subdomain-group-centered">
+
+            <!-- Input centrado que borra el borde derecho plano -->
+            <input type="text" formControlName="slugDeseado"
+              class="form-control border-end-0 pe-1 text-primary font-monospace fw-bold text-center"
+              [class.is-invalid]="campoInvalido('slugDeseado')" placeholder="mi-comercio">
+
+            <!-- Sufijo fijo que borra el borde izquierdo plano -->
+            <span
+              class="input-group-text bg-light text-dark fw-bold border-start-0 font-monospace small ps-1">.zlipmenu.com</span>
+
+          </div>
+
+          <div class="form-text text-muted small mt-2">
+            <i class="fas fa-info-circle me-1"></i> Este será el enlace directo que escanearán tus comensales en las
+            mesas.
+          </div>
+        </div>
+
+        <!-- Botón de Envío Dinámico -->
+        <div class="col-12 mt-4">
+          <button type="submit" [disabled]="enviando"
+            class="btn btn-apple-primary py-3 px-5 rounded-pill fw-bold text-white tracking-wider w-100 transition">
+            <span *ngIf="!enviando">
+              <i class="fas fa-rocket me-2"></i> Solicitar Acceso Gratuito
+            </span>
+            <span *ngIf="enviando">
+              <i class="fas fa-spinner fa-spin me-2"></i> Procesando Solicitud Interna...
+            </span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
